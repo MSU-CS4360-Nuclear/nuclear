@@ -68,7 +68,7 @@ export function onDownloadStarted(uuid) {
   const payload = changePropertyForItem({
     downloads,
     uuid,
-    value: 'Started'
+    value: DownloadStatus.STARTED 
   });
   return {
     type: DOWNLOAD_STARTED,
@@ -115,11 +115,11 @@ export function onDownloadProgress(uuid, progress) {
   payload = changePropertyForItem({
     downloads: payload,
     uuid,
-    value: DownloadStatus.STARTED
+    value: progress === 1 ? DownloadStatus.FINISHED : DownloadStatus.STARTED
   });
   
   return {
-    type: DOWNLOAD_PROGRESS,
+    type: progress === 1 ? DOWNLOAD_FINISHED : DOWNLOAD_PROGRESS,
     payload
   };
 }
