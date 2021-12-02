@@ -88,7 +88,8 @@ class BandcampMetaProvider extends MetaProvider {
 
   async fetchArtistDetailsByName(artistName: string): Promise<ArtistDetails> {
     const artists = await this.searchForArtists(artistName);
-    return this.fetchArtistDetails(artists[0]?.id); 
+    // console.log("resourceUrl: " + JSON.stringify(artists[0]?.resourceUrl));
+    return this.fetchArtistDetails(artists[0]?.id);
   }
 
   async fetchAlbumDetailsByName(albumName: string): Promise<AlbumDetails> {
@@ -107,6 +108,7 @@ class BandcampMetaProvider extends MetaProvider {
       description: bandcampArtistDetails.description,
       coverImage: bandcampArtistDetails.coverImage,
       onTour: bandcampArtistDetails.shows.length > 0,
+      resourceUrl: bandcampArtistDetails.albums[0].url,
       similar: _.map(lastFmInfo.similar.artist, artist => ({
         name: artist.name,
         thumbnail: _.get(_.find(artist.image, { size: 'large' }), '#text')

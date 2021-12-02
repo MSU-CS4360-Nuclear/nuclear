@@ -46,6 +46,11 @@ const ArtistView: React.FC<ArtistViewProps> = ({
 
   const isOnTour = () => artist.onTour || false;
 
+  /* const getArtistInfo = (artistName) => {
+    const artistInfo = artistInfoSearchByName(artistName);
+    //console.log("artistInfo:" + JSON.stringify(artistInfo));
+};*/
+
   function renderArtistHeader() {
     return (
       <div className={styles.artist_header_overlay}>

@@ -77,6 +77,7 @@ export type ArtistDetails = {
     description?: string;
     tags?: string[];
     onTour?: boolean;
+    resourceUrl?: string;
     coverImage?: string;
     thumb?: string;
     images?: string[];

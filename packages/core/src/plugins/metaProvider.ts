@@ -14,7 +14,6 @@ abstract class MetaProvider extends Plugin {
   apiEndpoint?: string;
 
   abstract searchForArtists(query: string): Promise<Array<SearchResultsArtist>>;
-  // abstract searchForArtistInfo(query: string): Promise<Array<SearchResultsArtistInfo>>;
   abstract searchForReleases(query: string): Promise<Array<SearchResultsAlbum>>;
   abstract searchForTracks(query: string): Promise<Array<SearchResultsTrack>>;
   abstract searchAll(query: string): Promise<{
