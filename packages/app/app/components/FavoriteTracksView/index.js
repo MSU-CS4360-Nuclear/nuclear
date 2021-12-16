@@ -57,6 +57,8 @@ const FavoriteTracksView = ({
     );
   };
 
+  // found this reducer in semantic-UI-react docs
+  // https://react.semantic-ui.com/collections/table/#variations-sortable
   const tableReducer = (state, action) => {
     switch (action.type) {
     case 'CHANGE_SORT':
